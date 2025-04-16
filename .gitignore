@@ -1,38 +1,105 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
 # Dependencies
 node_modules
 .pnp
 .pnp.js
 
-# Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Testing
-coverage
-
-# Turbo
-.turbo
-
-# Vercel
-.vercel
-
-# Build Outputs
+# Build outputs
+dist/
+build/
 .next/
 out/
-build
-dist
 
-
-# Debug
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+uploads/
+temp/
+
+# Cloudinary
+cloudinary.json
+
+# MongoDB
+*.mongodb
+mongodb-data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.cache/
+.npm/
+.eslintcache
+
 # Misc
 .DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.pem
+
+# Turbo
+.turbo
+
+# Next.js
+.next/
+out/
+
+# Local env files
+.env*.local
+.env
+
+# Python eggs
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg

@@ -1,0 +1,40 @@
+{
+  "login": "Login",
+  "hero": {
+    "title": "Report Corruption & Misconduct",
+    "subtitle": "Safely & Anonymously",
+    "description": "WhistleSafe provides a secure platform for citizens to report corruption, misconduct, and local issues while maintaining complete anonymity. Your voice matters, and we ensure it's heard.",
+    "cta": "Report an Issue"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need to report safely",
+    "secure": {
+      "title": "Secure & Anonymous",
+      "description": "End-to-end encryption and zero-knowledge architecture ensure your identity remains protected."
+    },
+    "realtime": {
+      "title": "Real-time Updates",
+      "description": "Get instant notifications about your report's status and follow-up actions."
+    },
+    "ai": {
+      "title": "AI-Powered Analysis",
+      "description": "Advanced AI helps categorize reports, detect urgency, and identify potential fake submissions."
+    },
+    "multilingual": {
+      "title": "Multilingual Support",
+      "description": "Report in your preferred language with support for English, Hindi, and more regional languages."
+    }
+  },
+  "cta": {
+    "title": "Ready to make a difference?",
+    "subtitle": "Join thousands of citizens fighting for transparency",
+    "button": "Start Reporting"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us",
+    "rights": "All rights reserved."
+  }
+} 
