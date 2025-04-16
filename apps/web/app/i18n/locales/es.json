@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "login": "Iniciar Sesión"
+  },
+  "hero": {
+    "title": "Reporta con Seguridad, Actúa con Responsabilidad",
+    "description": "WhistleSafe proporciona una plataforma segura para reportar incidentes mientras protege tu identidad",
+    "cta": "Enviar un Reporte"
+  },
+  "features": {
+    "title": "Cómo Funciona",
+    "anonymous": {
+      "title": "Reportes Anónimos",
+      "description": "Envía reportes sin revelar tu identidad"
+    },
+    "secure": {
+      "title": "Plataforma Segura",
+      "description": "Encriptación de extremo a extremo para todos tus datos"
+    },
+    "track": {
+      "title": "Seguimiento",
+      "description": "Monitorea el estado de tu reporte en tiempo real"
+    }
+  },
+  "roles": {
+    "title": "Acceso a la Plataforma",
+    "user": {
+      "title": "Para Usuarios",
+      "description": "Envía reportes de forma anónima y sigue su progreso",
+      "cta": "Comenzar a Reportar"
+    },
+    "admin": {
+      "title": "Para Administradores",
+      "description": "Gestiona y responde a reportes en tu jurisdicción",
+      "cta": "Acceso Administrador"
+    },
+    "superadmin": {
+      "title": "Para Super Administradores",
+      "description": "Supervisa toda la plataforma y gestiona administradores",
+      "cta": "Acceso Super Admin"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "WhistleSafe",
+      "tagline": "Seguro. Anónimo. Responsable."
+    },
+    "links": {
+      "title": "Enlaces Rápidos",
+      "about": "Acerca de",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "soporte@whistlesafe.com"
+    },
+    "copyright": "© 2024 WhistleSafe. Todos los derechos reservados."
+  }
+} 

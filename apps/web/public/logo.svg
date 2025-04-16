@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="40" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 5L35 15V25L20 35L5 25V15L20 5Z" fill="#0070f3"/>
+  <path d="M20 10L30 17V23L20 30L10 23V17L20 10Z" fill="white"/>
+  <text x="45" y="25" font-family="Arial" font-size="20" font-weight="bold" fill="#333">WhistleSafe</text>
+</svg> 

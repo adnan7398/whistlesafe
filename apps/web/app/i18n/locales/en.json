@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "hero": {
+    "title": "Report Safely, Act Responsibly",
+    "description": "WhistleSafe provides a secure platform for reporting incidents while protecting your identity",
+    "cta": "Submit a Report"
+  },
+  "features": {
+    "title": "How It Works",
+    "anonymous": {
+      "title": "Anonymous Reporting",
+      "description": "Submit reports without revealing your identity"
+    },
+    "secure": {
+      "title": "Secure Platform",
+      "description": "End-to-end encryption for all your data"
+    },
+    "track": {
+      "title": "Track Progress",
+      "description": "Monitor your report's status in real-time"
+    }
+  },
+  "roles": {
+    "title": "Platform Access",
+    "user": {
+      "title": "For Users",
+      "description": "Submit reports anonymously and track their progress",
+      "cta": "Start Reporting"
+    },
+    "admin": {
+      "title": "For Admins",
+      "description": "Manage and respond to reports in your jurisdiction",
+      "cta": "Admin Login"
+    },
+    "superadmin": {
+      "title": "For Super Admins",
+      "description": "Oversee the entire platform and manage administrators",
+      "cta": "Super Admin Login"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "WhistleSafe",
+      "tagline": "Secure. Anonymous. Responsible."
+    },
+    "links": {
+      "title": "Quick Links",
+      "about": "About",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "support@whistlesafe.com"
+    },
+    "copyright": "© 2024 WhistleSafe. All rights reserved."
+  }
+} 

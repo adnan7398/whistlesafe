@@ -1,101 +1,122 @@
-import Image, { type ImageProps } from "next/image";
-import { Button } from "@repo/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
-
-type Props = Omit<ImageProps, "src"> & {
-  srcLight: string;
-  srcDark: string;
-};
-
-const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props;
-
-  return (
-    <>
-      <Image {...rest} src={srcLight} className="imgLight" />
-      <Image {...rest} src={srcDark} className="imgDark" />
-    </>
-  );
-};
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <ThemeImage
-          className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
-          alt="Turborepo logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>apps/web/app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new/clone?demo-description=Learn+to+implement+a+monorepo+with+a+two+Next.js+sites+that+has+installed+three+local+packages.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4K8ZISWAzJ8X1504ca0zmC%2F0b21a1c6246add355e55816278ef54bc%2FBasic.png&demo-title=Monorepo+with+Turborepo&demo-url=https%3A%2F%2Fexamples-basic-web.vercel.sh%2F&from=templates&project-name=Monorepo+with+Turborepo&repository-name=monorepo-turborepo&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fturborepo%2Ftree%2Fmain%2Fexamples%2Fbasic&root-directory=apps%2Fdocs&skippable-integrations=1&teamSlug=vercel&utm_source=create-turbo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <div className={styles.logo}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/logo.svg"
+              alt="WhistleSafe Logo"
+              width={150}
+              height={40}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            href="https://turbo.build/docs?utm_source"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-        <Button appName="web" className={styles.secondary}>
-          Open alert
-        </Button>
+          </div>
+          <div className={styles.navLinks}>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/login" className={styles.loginBtn}>Login</Link>
+          </div>
+        </nav>
+      </header>
+
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <h1>Report Safely, Act Responsibly</h1>
+          <p>WhistleSafe provides a secure platform for reporting incidents while protecting your identity</p>
+          <Link href="/report" className={styles.primaryBtn}>
+            Submit a Report
+          </Link>
+        </section>
+
+        <section className={styles.features}>
+          <h2>How It Works</h2>
+          <div className={styles.featureGrid}>
+            <div className={styles.featureCard}>
+              <Image
+                src="/anonymous.svg"
+                alt="Anonymous Reporting"
+                width={64}
+                height={64}
+              />
+              <h3>Anonymous Reporting</h3>
+              <p>Submit reports without revealing your identity</p>
+            </div>
+            <div className={styles.featureCard}>
+              <Image
+                src="/secure.svg"
+                alt="Secure Platform"
+                width={64}
+                height={64}
+              />
+              <h3>Secure Platform</h3>
+              <p>End-to-end encryption for all your data</p>
+            </div>
+            <div className={styles.featureCard}>
+              <Image
+                src="/track.svg"
+                alt="Track Progress"
+                width={64}
+                height={64}
+              />
+              <h3>Track Progress</h3>
+              <p>Monitor your report's status in real-time</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.roles}>
+          <h2>Platform Access</h2>
+          <div className={styles.roleGrid}>
+            <div className={styles.roleCard}>
+              <h3>For Users</h3>
+              <p>Submit reports anonymously and track their progress</p>
+              <Link href="/report" className={styles.secondaryBtn}>
+                Start Reporting
+              </Link>
+            </div>
+            <div className={styles.roleCard}>
+              <h3>For Admins</h3>
+              <p>Manage and respond to reports in your jurisdiction</p>
+              <Link href="/admin/login" className={styles.secondaryBtn}>
+                Admin Login
+              </Link>
+            </div>
+            <div className={styles.roleCard}>
+              <h3>For Super Admins</h3>
+              <p>Oversee the entire platform and manage administrators</p>
+              <Link href="/superadmin/login" className={styles.secondaryBtn}>
+                Super Admin Login
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
+
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://turbo.build?utm_source=create-turbo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to turbo.build →
-        </a>
+        <div className={styles.footerContent}>
+          <div className={styles.footerSection}>
+            <h4>WhistleSafe</h4>
+            <p>Secure. Anonymous. Responsible.</p>
+          </div>
+          <div className={styles.footerSection}>
+            <h4>Quick Links</h4>
+            <Link href="/about">About</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+          </div>
+          <div className={styles.footerSection}>
+            <h4>Contact</h4>
+            <p>support@whistlesafe.com</p>
+          </div>
+        </div>
+        <div className={styles.footerBottom}>
+          <p>&copy; 2024 WhistleSafe. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
