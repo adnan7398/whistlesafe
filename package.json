@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "hack-vihaan",
   "private": true,
   "scripts": {
     "build": "turbo run build",
