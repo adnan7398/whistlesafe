@@ -1,75 +1,74 @@
 'use client'
 
-import { useState } from 'react'
+import { useAuth } from '@/app/context/AuthContext'
 import { useRouter } from 'next/navigation'
-import { useTranslation } from '../../i18n/client'
-import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function DashboardLayout({ children, params: { lang } }) {
-  const { t } = useTranslation(lang, 'common')
+  const { user, logout } = useAuth()
   const router = useRouter()
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
-  const menuItems = [
-    { href: '/dashboard', label: 'dashboard', icon: '📊' },
-    { href: '/dashboard/reports', label: 'my_reports', icon: '📝' },
-    { href: '/dashboard/new-report', label: 'new_report', icon: '➕' },
-    { href: '/dashboard/settings', label: 'settings', icon: '⚙️' },
-  ]
+  useEffect(() => {
+    if (!user) {
+      router.push(`/${lang}/auth/login`)
+    }
+  }, [user, router, lang])
 
-  const handleLogout = () => {
-    // Clear auth token and redirect to login
-    localStorage.removeItem('token')
-    router.push(`/${lang}/auth/login`)
+  if (!user) {
+    return null
   }
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div
-        className={`${
-          isSidebarOpen ? 'w-64' : 'w-20'
-        } bg-white shadow-lg transition-all duration-300`}
-      >
-        <div className="p-4">
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100"
-          >
-            {isSidebarOpen ? '←' : '→'}
-          </button>
+    <div className="min-h-screen bg-gray-100">
+      <nav className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex">
+              <div className="flex-shrink-0 flex items-center">
+                <h1 className="text-xl font-bold">WhistleSafe</h1>
+              </div>
+              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a
+                  href={`/${lang}/dashboard/${user.role}`}
+                  className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Dashboard
+                </a>
+                {user.role === 'admin' && (
+                  <a
+                    href={`/${lang}/dashboard/admin/users`}
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Manage Users
+                  </a>
+                )}
+                {user.role === 'super-admin' && (
+                  <a
+                    href={`/${lang}/dashboard/super-admin/admins`}
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Manage Admins
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center">
+              <button
+                onClick={() => logout()}
+                className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
-        <nav className="mt-4">
-          {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={`/${lang}${item.href}`}
-              className="flex items-center p-4 hover:bg-gray-100"
-            >
-              <span className="text-xl mr-4">{item.icon}</span>
-              {isSidebarOpen && <span>{t(`dashboard.${item.label}`)}</span>}
-            </Link>
-          ))}
-        </nav>
-        <div className="absolute bottom-0 w-full p-4">
-          <button
-            onClick={handleLogout}
-            className="w-full p-2 text-red-600 hover:bg-red-50 rounded-lg"
-          >
-            {isSidebarOpen && t('dashboard.logout')}
-          </button>
-        </div>
-      </div>
+      </nav>
 
-      {/* Main Content */}
-      <div className="flex-1 overflow-auto">
-        <header className="bg-white shadow-sm p-4">
-          <h1 className="text-2xl font-semibold text-gray-800">
-            {t('dashboard.title')}
-          </h1>
-        </header>
-        <main className="p-6">{children}</main>
-      </div>
+      <main className="py-10">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          {children}
+        </div>
+      </main>
     </div>
   )
 } 

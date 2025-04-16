@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useTranslation } from '../i18n/client'
+import Link from 'next/link'
 
 export default function Home({ params: { lang } }) {
   const { t } = useTranslation(lang, 'common')
@@ -36,14 +37,25 @@ export default function Home({ params: { lang } }) {
             <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
               {t('hero.subtitle')}
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-              onClick={() => router.push(`/${lang}/auth/signup`)}
-            >
-              {t('hero.cta')}
-            </motion.button>
+            <div className="flex gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                onClick={() => router.push(`/${lang}/auth/signup`)}
+              >
+                {t('hero.cta')}
+              </motion.button>
+              <Link href={`/${lang}/auth/login`}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all"
+                >
+                  {t('hero.login')}
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

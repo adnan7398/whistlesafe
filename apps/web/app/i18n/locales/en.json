@@ -7,7 +7,8 @@
   "hero": {
     "title": "Report Safely, Act Responsibly",
     "description": "WhistleSafe provides a secure platform for reporting incidents while protecting your identity",
-    "cta": "Submit a Report"
+    "cta": "Submit a Report",
+    "login": "Login"
   },
   "features": {
     "title": "How It Works",
@@ -49,13 +50,16 @@
     },
     "links": {
       "title": "Quick Links",
+      "home": "Home",
       "about": "About",
+      "contact": "Contact",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service"
     },
     "contact": {
-      "title": "Contact",
-      "email": "support@whistlesafe.com"
+      "title": "Contact Us",
+      "email": "support@whistlesafe.com",
+      "phone": "+1 (555) 123-4567"
     },
     "copyright": "© 2024 WhistleSafe. All rights reserved."
   }

@@ -10,18 +10,9 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "turbo run lint"
   },
   "devDependencies": {
-    "prettier": "^3.0.0",
-    "turbo": "^1.13.4",
-    "typescript": "^5.0.3"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@9.6.0"
+    "turbo": "^1.12.3"
+  }
 }
